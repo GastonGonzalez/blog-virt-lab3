@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: zookeepeer_virtlab
+# Cookbook Name:: zookeeper_virtlab
 # Recipe:: default
 #
 # Copyright 2017 Gaston Gonzalez

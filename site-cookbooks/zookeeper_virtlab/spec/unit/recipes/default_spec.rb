@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: zookeepeer_virtlab
+# Cookbook Name:: zookeeper_virtlab
 # Spec:: default
 #
 # Copyright 2017 Gaston Gonzalez
@@ -19,7 +19,7 @@
 
 require 'spec_helper'
 
-describe 'zookeepeer_virtlab::default' do
+describe 'zookeeper_virtlab::default' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new

@@ -19,7 +19,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[zookeepeer_virtlab::default]
+      - recipe[zookeeper_virtlab::default]
     verifier:
       inspec_tests:
         - test/recipes
