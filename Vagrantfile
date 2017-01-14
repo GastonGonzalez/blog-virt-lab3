@@ -6,6 +6,7 @@ Vagrant.configure('2') do |config|
     config.ssh.private_key_path = '/Users/gaston/vagrant-keys/vagrant'
 
     config.vm.provider :proxmox do |proxmox|
+        #proxmox.endpoint = 'http://localhost:8006/api2/json'
         proxmox.endpoint = 'https://192.168.5.110:8006/api2/json'
         proxmox.user_name = 'vagrant@pve'
         proxmox.password = 'vagrant'
@@ -66,7 +67,7 @@ Vagrant.configure('2') do |config|
         chef.roles_path = "roles"
 
         # Add a recipe
-        chef.add_recipe "zookeeper-virtlab::default"
+        chef.add_recipe "zookeeper_virtlab::default"
     end
 
 end
