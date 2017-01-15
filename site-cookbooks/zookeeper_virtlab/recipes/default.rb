@@ -26,8 +26,8 @@ end
 
 file '/var/lib/zookeeper/myid' do
   mode '0644'
-  owner 'zookeeper'
-  group 'zookeeper'
+  owner node['zookeeper']['user']
+  group node['zookeeper']['user']
 end
 
 # Start ZooKeeper
