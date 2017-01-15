@@ -18,5 +18,17 @@
 
 # Install and configure ZooKeeper
 include_recipe 'zookeeper::default'
+
+# Determine ID for current node in cluster
+execute 'set_cluster_node_id' do
+  command 'grep $(hostname) /opt/zookeeper/conf/zoo.cfg | sed -r \'s/server.([0-9]+)=.*/\1/g\' > /var/lib/zookeeper/myid'
+end
+
+file '/var/lib/zookeeper/myid' do
+  mode '0644'
+  owner 'zookeeper'
+  group 'zookeeper'
+end
+
 # Start ZooKeeper
 include_recipe 'zookeeper::service'
