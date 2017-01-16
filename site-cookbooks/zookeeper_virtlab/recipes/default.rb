@@ -17,18 +17,7 @@
 # limitations under the License.
 
 # Install and configure ZooKeeper
-include_recipe 'zookeeper::default'
-
-# Determine ID for current node in cluster
-execute 'set_cluster_node_id' do
-  command 'grep $(hostname) /opt/zookeeper/conf/zoo.cfg | sed -r \'s/server.([0-9]+)=.*/\1/g\' > /var/lib/zookeeper/myid'
-end
-
-file '/var/lib/zookeeper/myid' do
-  mode '0644'
-  owner node['zookeeper']['user']
-  group node['zookeeper']['user']
-end
-
-# Start ZooKeeper
-include_recipe 'zookeeper::service'
+bag = data_bag_item('configs', 'zookeeper')['glab']
+node.default['zookeeper-cluster']['config']['instance_name'] = node['fqdn']
+node.default['zookeeper-cluster']['config']['ensemble'] = bag
+include_recipe 'zookeeper-cluster::default'

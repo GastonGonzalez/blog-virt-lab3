@@ -1,0 +1,8 @@
+{
+  "id": "zookeeper",
+  "glab": [
+    "zk1.localdomain",
+    "zk2.localdomain",
+    "zk3.localdomain"
+  ]
+}

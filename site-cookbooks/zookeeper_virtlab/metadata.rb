@@ -14,4 +14,4 @@ version '0.1.0'
 # gets a `View Source` link
 # source_url 'https://github.com/<insert_org_here>/zookeeper_virtlab' if respond_to?(:source_url)
 
-depends 'zookeeper', '~> 8.1.1'
+depends 'zookeeper-cluster', '~> 1.3.2'
