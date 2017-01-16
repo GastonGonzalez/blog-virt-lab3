@@ -1,1 +1,5 @@
 /cookbooks/
+
+# Vagrant
+.vagrant/
+Berksfile.lock
